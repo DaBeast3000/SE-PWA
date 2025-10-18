@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SunCard TCG Store</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+          <circle cx="32" cy="20" r="8" fill="#FFB703"/>
+          <g fill="#FFB703" opacity="0.9">
+            <rect x="6" y="28" width="12" height="18" transform="rotate(-18 12 37)" />
+            <rect x="22" y="26" width="12" height="18" transform="rotate(-6 28 35)" />
+            <rect x="38" y="26" width="12" height="18" transform="rotate(6 44 35)" />
+            <rect x="54" y="28" width="12" height="18" transform="rotate(18 60 37)" />
+          </g>
+        </svg>
+      </div>
+      <div class="brand-text">SunCard</div>
+    </div>
+
+    <div class="search-wrap">
+      <input id="searchInput" class="search-input" type="search" placeholder="Search cards, sets, keywords..." aria-label="Search catalogue" />
+    </div>
+
+    <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+      <span class="cart-icon">🛒</span>
+      <span id="cartCount" class="cart-count">0</span>
+    </button>
+  </header>
+
+  <nav id="tcgTabs" class="tcg-tabs" aria-label="TCG categories"></nav>
+
+  <main class="content" role="main">
+    <aside id="filters" class="filters" aria-label="Filters"></aside>
+
+    <section id="catalogue" class="catalogue" aria-live="polite"></section>
+  </main>
+
+  <div id="cartDrawer" class="cart-drawer" hidden aria-hidden="true">
+    <header class="cart-header">
+      <h3>Cart</h3>
+      <button id="closeCart" aria-label="Close cart">✕</button>
+    </header>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">Subtotal: <span id="cartSubtotal">$0.00</span></div>
+      <button id="checkoutBtn" class="primary">Checkout</button>
+    </div>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
